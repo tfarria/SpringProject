@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action="/savecontact" th:object="${person}" method="post">
+
+    <input type="hidden" th:field="*{id}">
+    First Name:  <input type="text" th:field="*{firstName}">
+    Last Name:  <input type="text" th:field="*{lastName}">
+    Address:  <input type="text" th:field="*{address}">
+    Phone Number:  <input type="number" th:field="*{phoneNumber}">
+    Email Address:  <input type="text" th:field="*{email}">
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>

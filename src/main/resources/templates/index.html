@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/add">Add a Contact</a>
+<div th:each="eachPerson:${party}">
+    <p th:text="${eachPerson.lastName}"></p>
+    <p th:text="${eachPerson.invited}?'Invited':'Not Invited'"></p>
+    <a th:text="${eachPerson.invited}?'Uninvite':'Invite'" th:href="@{/changestatus/{id}(id=${eachPerson.id})}"></a>
+
+
+
+</div>
+</body>
+</html>
